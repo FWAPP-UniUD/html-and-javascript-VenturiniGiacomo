@@ -78,15 +78,44 @@
             </table>
         </p>
         <p>
-            <h1>Ex 5</h1>
+            <h1>Ex 5/6</h1>
             <form action=" http://satt.diegm.uniud.it/wa/test_form.php">
                 Name<input type="text" name="Username"><br>
-                Password<input type="text" name="Password"><br>
+                Password<input type="password" name="Password"><br>
+
+                <input type="radio" name="Rb" value="1"> Rb1<br>
+                <input type="radio" name="Rb" value="2"> Rb2<br>
+                <input type="radio" name="Rb" value="3"> Rb3 <br>
+                <input type="checkbox" name="check" value="check"> checkbox<br>
+                <select size="5" name="lstselect" multiple="multiple" id="lstselect" >
+                    <option value="0" onclick="ValidateListBox(this)">option1</option>
+                    <option value="1"onclick="ValidateListBox(this)">option2</option>
+                    <option value="2" onclick="ValidateListBox(this)">option3</option>
+                    <option value="3" onclick="ValidateListBox(this)" v>option4</option>
+                    <option value="4" onclick="ValidateListBox(this)">option5</option>
+                </select><br>
+
                 <input type="submit" value="submit"> 
+        
+                
+                <script type="text/javascript">
+                    function ValidateListBox(sel ) {
+                        const max_allowed = 2;
+                        let count = 0;
+                        let listbox = document.getElementById("lstselect");
+                        for (i = 0; i < listbox.options.length; i++) {
+                            if (listbox.options[i].selected) {
+                                count++;
+                            }
+                        }
+                        if (count > max_allowed) {
+                            sel.selected=false;
+                            return false;
+                        }
+                        return true;
+                    }
+                </script>
             </form>
-        </p>
-        <p>
-            <h1>Ex 6</h1>
         </p>
     </body>
 </html>
