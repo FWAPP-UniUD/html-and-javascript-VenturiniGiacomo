@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="container">
+            <h1>Es 9</h1>
+            <input type="button" id = "Seek" value="Seek" onclick="mostra()"/>
+            <input type="button" id = "Hide" value="Hide" onclick="nascondi()"/>
+            <script type="text/javascript">
+                function mostra(){
+                    let div = document.getElementById("placeholder");
+                    let container =document.querySelector("#container");
+                    if(div == null){
+                        let g = document.createElement("div");
+                        g.setAttribute("id","placeholder");
+                        container.appendChild(g);
+                        let t= document.createTextNode("ciaoo");
+                        g.appendChild(t);
+                    }
+                }
+                function nascondi(){
+                    let div = document.getElementById("placeholder");
+                    let container =document.querySelector("#container");
+                    if(div){
+                        container.removeChild(div);
+                    }
+                }
+            </script>
+        </div>
+    </body>
+</html>
