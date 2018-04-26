@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div>
+            <h1>Ex 9</h1>
+            <form>
+                <input type="checkbox" id="cb"> Enable Field
+                <fieldset id="field">
+                    Name<input type="text" name="Username"><br>
+                    Password<input type="password" name="Password"><br>
+                    <input type="radio" name="Rb" value="1"> Rb1<br>
+                    <input type="radio" name="Rb" value="2"> Rb2<br>
+                    <input type="radio" name="Rb" value="3"> Rb3 <br>
+                </fieldset>
+            </form>
+            <script type="text/javascript">
+                let check = document.getElementById("cb");
+                let field = document.getElementById("field");
+                check.addEventListener('change', function(){
+                    if(this.checked== true){
+                        field.disabled=true;
+                    }
+                    else{
+                        field.disabled=false;
+                    }
+                });
+            </script>
+        </div>
+    </body>
+</html>
